@@ -1,326 +1,35 @@
-# 🛠️ MultiThread Tools Box - 多线程工具箱
+MultiThread-Tools-Box
+=====================
 
-一个功能强大的Python多线程PC端工具集合，提供各种实用的系统工具，充分利用多核CPU性能，让工作效率翻倍！
+Layered project: `core/`, `cli/`, `gui/`, `common/`.
 
-![Python Version](https://img.shields.io/badge/python-3.6+-blue.svg)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-active%20development-brightgreen.svg)
+Usage (CLI):
 
-## 📋 目录
-- [🌟 项目简介](#-项目简介)
-- [✨ 功能特性](#-功能特性)
-- [🚀 包含工具](#-包含工具)
-- [📦 安装指南](#-安装指南)
-- [🎯 快速开始](#-快速开始)
-- [📖 详细使用说明](#-详细使用说明)
-- [🔧 技术架构](#-技术架构)
-- [📈 性能优势](#-性能优势)
-- [🤝 贡献指南](#-贡献指南)
-- [📝 开发计划](#-开发计划)
-- [📄 许可证](#-许可证)
+```
+BTM <command> [options]
 
-## 🌟 项目简介
-
-**MultiThread Tools Box** 是一个集成了多种实用工具的PC端应用程序，采用Python多线程技术，充分发挥多核CPU性能优势。每个工具都经过精心设计，提供直观的用户界面和强大的功能，让你的日常工作更加高效便捷。
-
-### 🎯 设计目标
-- ⚡ **高性能**：多线程并行处理，充分利用硬件资源
-- 🎯 **易用性**：现代化UI设计，操作简单直观
-- 🔧 **可扩展**：模块化架构，易于添加新工具
-- 🛡️ **可靠性**：完善的错误处理和异常恢复机制
-- 📱 **现代化**：支持主题切换，界面美观大方
-
-## ✨ 功能特性
-
-### 🚀 核心特性
-- **多线程架构**：所有工具均采用多线程设计，性能卓越
-- **实时进度显示**：可视化进度条，任务状态一目了然
-- **批量操作支持**：支持批量处理，大幅提升效率
-- **智能队列管理**：任务队列调度，合理分配系统资源
-- **断点续传**：支持中断恢复，避免重复操作
-- **主题切换**：支持明暗主题，保护你的眼睛
-
-### 🛡️ 安全特性
-- **操作确认**：重要操作前确认，防止误操作
-- **备份机制**：关键操作前自动备份，数据安全有保障
-- **权限管理**：合理的权限控制，保护系统安全
-- **错误恢复**：完善的错误处理，程序稳定可靠
-
-## 🚀 包含工具
-
-### 📥 1. 增强版下载器 (Enhanced Downloader)
-- ✅ 多线程分段下载，速度飞快
-- ✅ 断点续传支持，网络中断也不怕
-- ✅ 下载队列管理，多任务并行
-- ✅ 速度限制功能，合理分配带宽
-- ✅ 视频下载支持（YouTube等）
-- ✅ 下载历史记录，方便查找
-- ✅ 拖拽URL支持，操作便捷
-- ✅ 系统通知提醒，及时知晓状态
-
-### 🔍 2. 文件去重工具 (Duplicate Finder)
-- ✅ 多线程文件扫描，快速找出重复文件
-- ✅ 智能相似度计算，支持内容比对
-- ✅ 相似度分级：低度(70%+)、中度(80%+)、高度(90%+)
-- ✅ 表格化显示，直观清晰
-- ✅ 安全删除机制，防止误删
-- ✅ 批量操作支持，一键处理
-- ✅ 详细报告导出，记录完整
-
-### 🖥️ 3. 系统资源监控器 (System Monitor) *[开发中]*
-- ✅ 实时CPU使用率监控（每个核心）
-- ✅ 内存使用情况追踪
-- ✅ 磁盘I/O性能监控
-- ✅ 网络流量统计分析
-- ✅ GPU使用率监控
-- ✅ 温度传感器读取
-- ✅ 历史数据记录
-
-### 📁 4. 文件批量重命名器 (Batch Renamer) *[开发中]*
-- ✅ 正则表达式支持，灵活匹配
-- ✅ 按文件内容智能重命名
-- ✅ 实时预览功能，结果可见
-- ✅ 撤销操作支持，安全有保障
-- ✅ 多线程处理，大量文件也快速
-- ✅ 模板系统支持，常用规则保存
-
-### 🌐 5. 网络速度测试器 (Network Speed Test) *[开发中]*
-- ✅ 下载/上传速度测试
-- ✅ 延迟测试（Ping）
-- ✅ 路由追踪（Traceroute）
-- ✅ DNS解析速度测试
-- ✅ 多服务器对比
-- ✅ 历史记录保存
-
-### 🖼️ 6. 图片批量处理器 (Image Processor) *[开发中]*
-- ✅ 批量格式转换
-- ✅ 尺寸批量调整
-- ✅ 水印批量添加
-- ✅ 滤镜效果应用
-- ✅ EXIF信息处理
-- ✅ 压缩优化处理
-
-### 📊 更多工具正在开发中...
-
-## 📦 安装指南
-
-### 📋 系统要求
-- **操作系统**：Windows 10/11, macOS 10.14+, Linux (Ubuntu 18.04+)
-- **Python版本**：3.6 或更高版本
-- **内存要求**：至少 4GB RAM（推荐 8GB+）
-- **磁盘空间**：500MB 可用空间
-
-### 🔧 快速安装
-
-#### 方法1：使用安装器（推荐）
-1. 下载最新版本的安装器：`MultiThreadTools-Setup.exe`
-2. 运行安装器，选择需要的组件
-3. 等待下载和安装完成
-4. 从开始菜单启动应用程序
-
-#### 方法2：源码安装
-```bash
-# 克隆项目
-git clone https://github.com/City25/MultiThread-Tools-Box.git
-cd MultiThread-Tools-Box
-
-# 创建虚拟环境（推荐）
-python -m venv venv
-
-# 激活虚拟环境
-# Windows:
-venv\Scripts\activate
-# macOS/Linux:
-source venv/bin/activate
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 运行主程序
-python main.py
+Commands:
+  download   -u URL -p PATH -t THREADS [-n NAME]
+  duplicate  -p PATH -t THREADS [--similarity]
+  monitor    [--interval SECONDS]
+  rename     -p PATH -r RULES
+  speedtest  [--duration SECONDS]
+  image      -p PATH -o OUTPUT [--resize WxH] [--format FMT]
 ```
 
-### 📦 依赖说明
-**好消息！** 核心功能仅使用Python标准库，无需额外安装！
+Run the CLI:
 
-#### 可选依赖（增强功能）
-```bash
-# 视频下载支持
-pip install yt-dlp
-
-# 系统通知
-pip install notification
-
-# 图像处理
-pip install Pillow
-
-# 数据库支持
-pip install sqlite3
+```
+python -m cli.main ...
 ```
 
-## 🎯 快速开始
+Requirements:
+- Python 3.8+
+- Standard library only for `core/` implementation
+- `argparse` for CLI
+- `tkinter` for GUI
+- `threading` + `concurrent.futures` for multithreading
 
-### 🚀 启动应用程序
-```bash
-python main.py
-```
-
-### 📥 使用下载器
-1. 点击"🚀 增强下载器"按钮
-2. 粘贴下载链接
-3. 选择保存路径
-4. 设置线程数（推荐4-8个）
-5. 点击"添加下载"
-6. 在任务列表中查看进度
-
-### 🔍 使用文件去重
-1. 点击"🔍 文件去重工具"
-2. 选择扫描路径（默认C盘）
-3. 设置线程数
-4. 点击"开始扫描"
-5. 查看重复文件列表
-6. 选择要删除的文件
-7. 点击"删除选中文件"
-
-## 📖 详细使用说明
-
-### 🎨 主题切换
-- 支持明暗主题切换
-- 自动跟随系统主题
-- 手动切换：设置 → 外观 → 主题
-
-### ⚙️ 性能调优
-- **线程数设置**：根据CPU核心数调整，推荐4-8个线程
-- **内存限制**：可在设置中限制内存使用
-- **磁盘缓存**：支持下载缓存设置
-
-### 🔧 高级设置
-- **网络代理**：支持HTTP/HTTPS代理
-- **速度限制**：可限制下载速度
-- **文件过滤**：支持文件类型过滤
-- **计划任务**：支持定时执行
-
-## 🔧 技术架构
-
-### 🏗️ 项目结构
-```
-MultiThread-Tools-Box/
-├── core/                    # 核心框架
-│   ├── base_worker.py      # 基础工作线程类
-│   ├── task_manager.py     # 任务管理器
-│   └── progress_handler.py # 进度处理器
-├── tools/                   # 工具模块
-│   ├── downloader/         # 增强下载器
-│   ├── duplicate_finder/   # 文件去重工具
-│   ├── system_monitor/     # 系统监控器
-│   └── ...
-├── ui/                     # 用户界面
-│   ├── main_window.py      # 主窗口
-│   ├── tool_widgets/       # 工具界面
-│   └── themes/             # 主题样式
-├── utils/                  # 工具函数
-│   ├── file_utils.py       # 文件操作
-│   ├── network_utils.py    # 网络操作
-│   └── system_utils.py     # 系统操作
-├── plugins/                # 插件系统
-├── tests/                  # 测试文件
-├── docs/                   # 文档
-├── examples/               # 示例代码
-├── requirements.txt        # 依赖列表
-├── main.py                 # 主程序入口
-└── README.md               # 项目说明
-```
-
-### 🔄 工作流程
-```
-用户请求 → 任务管理器 → 工作线程池 → 并行处理 → 结果汇总 → UI更新
-```
-
-### 📊 性能监控
-- **CPU使用率**：实时监控各线程CPU占用
-- **内存占用**：内存使用统计和优化
-- **磁盘I/O**：磁盘读写性能监控
-- **网络带宽**：网络流量实时显示
-
-## 📈 性能优势
-
-### ⚡ 多线程优势
-- **并行处理**：充分利用多核CPU
-- **异步I/O**：网络请求不阻塞界面
-- **任务队列**：智能调度，避免资源竞争
-- **负载均衡**：动态调整线程数量
-
-### 📊 性能对比
-| 工具类型 | 单线程处理 | 多线程处理 | 性能提升 |
-|---------|------------|------------|----------|
-| 文件扫描 | 1000文件/分钟 | 4000文件/分钟 | **4倍** |
-| 下载速度 | 1MB/s | 8MB/s | **8倍** |
-| 图片处理 | 50张/分钟 | 200张/分钟 | **4倍** |
-
-## 🤝 贡献指南
-
-我们欢迎各种形式的贡献！❤️
-
-### 🚀 快速参与
-1. **Fork** 项目
-2. 创建您的功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的修改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启一个 Pull Request
-
-### 📋 贡献类型
-- 🐛 **Bug修复**：发现并修复程序bug
-- ✨ **新功能**：开发新的工具模块
-- 🎨 **UI改进**：优化用户界面和体验
-- 📚 **文档完善**：改进文档和教程
-- 🌍 **国际化**：添加多语言支持
-- ⚡ **性能优化**：提升程序性能
-
-### 📝 开发规范
-- 遵循 [PEP 8](https://www.python.org/dev/peps/pep-0008/) 编码规范
-- 添加适当的注释和文档字符串
-- 编写单元测试
-- 更新相关文档
-
-## 📝 开发计划
-
-### 📅 近期计划 (v1.1.0)
-- [ ] 系统资源监控器完整版
-- [ ] 文件批量重命名器
-- [ ] 网络速度测试器
-- [ ] 多语言支持（中文、英文）
-
-### 📅 中期计划 (v1.2.0)
-- [ ] 图片批量处理器
-- [ ] 剪贴板管理器
-- [ ] 屏幕截图工具
-- [ ] 插件系统完善
-
-### 📅 长期计划 (v2.0.0)
-- [ ] 移动端支持
-- [ ] 云同步功能
-- [ ] AI智能助手
-- [ ] 企业版功能
-
-## 📄 许可证
-
-本项目采用 **MIT 许可证** - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-## 🙏 致谢
-
-- 感谢所有 [贡献者](CONTRIBUTORS.md) 的辛勤工作
-- 感谢 GitHub 开源社区及 Git、Kimi AI、VS Code 、Python等优秀工具链的支持。
-- 感谢用户们的反馈和支持
-
-## 📞 联系我们
-
-- 📧 **邮箱**：WQF_hello_world@163.com
-- 💬 **讨论区**：[GitHub Discussions](https://github.com/City25/MultiThread-Tools-Box/discussions)
-- 🐛 **问题报告**：[GitHub Issues](https://github.com/City25/MultiThread-Tools-Box/issues)
-- 💼 **项目主页**：[GitHub Pages](https://City25.github.io/MultiThread-Tools-Box)
-
----
-
-⭐ **如果这个项目对你有帮助，请给我们一个Star！** 
-你的支持是我们持续改进的动力！ 🚀
+This repository provides basic, extensible implementations and uses callback-based
+progress reporting. Image resize/convert operations require Pillow; otherwise the
+`image` command will perform safe copy or report the missing capability.
