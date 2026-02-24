@@ -204,32 +204,23 @@ python main.py
 ## 🔧 技术架构
 
 ### 🏗️ 项目结构
+本项目采用**分层架构**实现
+
 ```
 MultiThread-Tools-Box/
-├── core/                    # 核心框架
-│   ├── base_worker.py      # 基础工作线程类
-│   ├── task_manager.py     # 任务管理器
-│   └── progress_handler.py # 进度处理器
-├── tools/                   # 工具模块
-│   ├── downloader/         # 增强下载器
-│   ├── duplicate_finder/   # 文件去重工具
-│   ├── system_monitor/     # 系统监控器
-│   └── ...
-├── ui/                     # 用户界面
-│   ├── main_window.py      # 主窗口
-│   ├── tool_widgets/       # 工具界面
-│   └── themes/             # 主题样式
-├── utils/                  # 工具函数
-│   ├── file_utils.py       # 文件操作
-│   ├── network_utils.py    # 网络操作
-│   └── system_utils.py     # 系统操作
-├── plugins/                # 插件系统
-├── tests/                  # 测试文件
-├── docs/                   # 文档
-├── examples/               # 示例代码
-├── requirements.txt        # 依赖列表
-├── main.py                 # 主程序入口
-└── README.md               # 项目说明
+├── cli/                    # 命令行交互层：工具终端使用入口
+│   ├── __init__.py         # CLI模块初始化
+│   └── main.py             # 命令行主程序（解析参数、调用核心工具）
+├── common/                 # 通用基础层：工具框架公共类型定义
+│   ├── __init__.py         # Common模块初始化
+│   └── types.py            # 定义Progress、TaskConfig等公共类型
+├── core/                   # 核心逻辑层：工具统一基础框架实现
+│   ├── __init__.py         # Core模块初始化
+│   ├── base.py             # BaseTool抽象基类（回调、状态控制核心）
+│   └── downloader.py       # 基于基础框架的下载工具实现
+├── gui/                    # 图形界面层
+├── .gitignore              # Git忽略配置
+└── README.md               # 项目说明文档
 ```
 
 ### 🔄 工作流程
